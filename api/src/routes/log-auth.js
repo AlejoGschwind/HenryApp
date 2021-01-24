@@ -46,11 +46,12 @@ router.get('/logout', (req, res, next) => {
   res.redirect('/');
 });
 
-//--------Esta ruta estaba puesta aca porque estaba autenticada------------
+//--------Esta ruta estaba puesta aca porque estaba autenticada--------------
 // router.get('/profile', (req, res, next) => {
 //   res.render('profile');                 //<-- este profile era de views
 // });     
-//-------------------------------------------------------------------------
+//esto era para que solo puedas entrar a la pagina de perfil si estas logeado
+//---------------------------------------------------------------------------
 
 
 //----funcion de autenticacion
