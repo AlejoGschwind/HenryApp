@@ -12,6 +12,28 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Get all Instructors
+router.get('/instructors', async (req, res) => {
+  try {
+    const users = await User.find({ role: "instructor" });
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+//Get all students
+router.get ("/students", async (req,res) => {
+  try {
+    const students = await User.find ({role: "student"})
+    res.json (students)
+  }
+  catch (error) {
+    res.status(500).json({message: error})
+  }
+})
+
+
 // Get one user
 router.get('/:id', (req, res) => {
   const { id } = req.params;
@@ -53,29 +75,40 @@ router.patch('/:id', (req, res) => {
   const { id } = req.params
   const { email, first_name, last_name, password, is_super_admin, role, avatar } = req.body;
   let update = {}
-  if (email){
-    update = {...update, email}
+  if (email) {
+    update = { ...update, email }
   }
-  if (first_name){
-    update = {...update, first_name}
+  if (first_name) {
+    update = { ...update, first_name }
   }
-  if (last_name){
-    update = {...update, last_name}
+  if (last_name) {
+    update = { ...update, last_name }
   }
-  if (password){
-    update = {...update, password}
+  if (password) {
+    update = { ...update, password }
   }
-  if (is_super_admin){
-    update = {...update, is_super_admin}
+  if (is_super_admin) {
+    update = { ...update, is_super_admin }
   }
-  if (role){
-    update = {...update, role}
+  if (role) {
+    update = { ...update, role }
   }
-  if (avatar){
-    update = {...update, avatar}
+  if (avatar) {
+    update = { ...update, avatar }
   }
 
-  User.findOneAndUpdate(id, update, {new: true}).then(user => {
+  User.findOneAndUpdate(id, update, { new: true }).then(user => {
+    res.json(user)
+  })
+    .catch(error => {
+      res.status(400).json({ message: error.message });
+    })
+});
+
+//Ban one user
+router.patch('/ban/:id', (req, res) => {
+  const { id } = req.params;
+  User.findOneAndUpdate(id, { role: 'banned' }, { new: true }).then(user => {
     res.json(user)
   })
     .catch(error => {
@@ -93,5 +126,8 @@ router.delete('/:id', (req, res) => {
     res.status(500).json({ message: error.message });
   })
 });
+
+
+ 
 
 module.exports = router;
