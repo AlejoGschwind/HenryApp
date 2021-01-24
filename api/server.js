@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const engine = require('ejs-mate');
+//const engine = require('ejs-mate');
 //const path = require('path');
 const passport = require('passport');
 const session = require('express-session');
@@ -26,8 +26,8 @@ db.once('open', () => {
 });
 
 //---- configuracion ---
-server.engine('ejs', engine);
-server.set('view engine', 'ejs');
+// server.engine('ejs', engine);
+// server.set('view engine', 'ejs');
 //---
 
 
@@ -65,7 +65,7 @@ server.use((req, res, next)=>{
 
 //Rutas
 server.use('/users', userRoutes);
-app.use('/', require('./src/routes/log-auth'));
+server.use('/', require('./src/routes/log-auth'));
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars

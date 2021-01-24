@@ -36,3 +36,18 @@ Content-Type: application/json
 
 # Delete one user
 DELETE http://localhost:5000/users/600a9eafc15d9518107954d8
+
+###
+
+
+# Register
+POST http://localhost:5000/register
+
+###
+
+
+# Login page
+
+POST http://localhost:5000/login
+
+###

@@ -3,13 +3,13 @@ const router = express.Router();
 
 const passport = require('passport');
 
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+// router.get('/', (req, res, next) => {
+//   res.render('index');
+// });
 
-router.get('/register', (req, res, next) => {
-  res.render('register');
-});
+// router.get('/register', (req, res, next) => {
+//   res.render('register');
+// });
 
 router.post('/register', passport.authenticate('local-register', {
   successRedirect: '/profile',
@@ -17,9 +17,9 @@ router.post('/register', passport.authenticate('local-register', {
   passReqToCallback: true
 }));
 
-router.get('/login', (req, res, next) => {
-  res.render('login');
-});
+// router.get('/login', (req, res, next) => {
+//   res.render('login');
+// });
 
 router.post('/login', passport.authenticate('local-login', {
   successRedirect: '/profile',
@@ -39,9 +39,9 @@ router.get('/logout', (req, res, next) => {
   res.redirect('/');
 });
 
-router.get('/profile', (req, res, next) => {
-  res.render('profile');
-});
+// router.get('/profile', (req, res, next) => {
+//   res.render('profile');
+// });
 
 
 //----funcion de autenticacion
