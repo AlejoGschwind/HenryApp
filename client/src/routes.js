@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import UserList from "../src/components/UserList/index"
 
 
 
@@ -8,7 +9,7 @@ const routes = () => {
     <BrowserRouter>
       <Switch>
         {/* To do: Acá van las rutas del cliente.*/}
-      {/*   <Route path='/example' component={component } /> */}
+        <Route exact path='/users' component={UserList} />
       </Switch>
     </BrowserRouter>
   );

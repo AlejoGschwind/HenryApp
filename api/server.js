@@ -8,6 +8,7 @@ const flash = require('connect-flash');
 const mongoose = require('mongoose');
 const { DATABASE_URL } = process.env;
 const userRoutes = require('./src/routes/users');
+const lectureRoutes = require('./src/routes/lectures');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const cors = require("cors");
@@ -65,7 +66,8 @@ server.use((req, res, next)=>{
 
 //Rutas
 server.use('/users', userRoutes);
-server.use('/', require('./src/routes/log-auth'));
+//server.use('/', require('./src/routes/log-auth'));
+server.use('/lectures', lectureRoutes);
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars

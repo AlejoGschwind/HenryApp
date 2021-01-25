@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const AppWrapper = styled.div`
-  background: red;
-  color: white;
+  background: white;
+  color: black;
   height: 100vh;
   width: 100vw;
   display: flex;

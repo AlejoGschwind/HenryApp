@@ -12,6 +12,16 @@ router.get('/', async (req, res) => {
   }
 });
 
+//Get users by role
+router.get('/:role', (req, res) => {
+  const { role } = req.params;
+  User.find({ role })
+    .then(users => res.json(users))
+    .catch(
+      error => res.status(500).json({ message: error.message })
+    )
+})
+
 // Get all Instructors
 router.get('/instructors', async (req, res) => {
   try {
@@ -23,13 +33,13 @@ router.get('/instructors', async (req, res) => {
 });
 
 //Get all students
-router.get ("/students", async (req,res) => {
+router.get("/students", async (req, res) => {
   try {
-    const students = await User.find ({role: "student"})
-    res.json (students)
+    const students = await User.find({ role: "student" })
+    res.json(students)
   }
   catch (error) {
-    res.status(500).json({message: error})
+    res.status(500).json({ message: error })
   }
 })
 
@@ -128,6 +138,6 @@ router.delete('/:id', (req, res) => {
 });
 
 
- 
+
 
 module.exports = router;
