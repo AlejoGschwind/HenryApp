@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Containers / Pages
-import CreateUser from "./components/CreateUser";
+/* import CreateUser from "./components/CreateUser"; */
 import OneLecture from "./components/OneLecture";
 import HomePage from "./containers/HomePage";
 import LoginPage from "./containers/LoginPage";
@@ -30,8 +30,8 @@ const routes = () => {
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/users" component={UserListPage} />
-        <Route exact path="/createUser" component={CreateUser} />
-        <Route exact path="/lecture/:lectureid" component={OneLecture} />
+      {/*   <Route exact path="/createUser" component={CreateUser} /> */}
+        <Route exact path="/lecture/:lectureid/module/:moduleid" component={OneLecture} />
         <Route exact path="/modulo/:moduloid" component={Lectures} />
         <Route exact path="/lecturesList" component={LectureList} />
         <Route exact path="/modules" component={ModuleList} />

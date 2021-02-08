@@ -15,24 +15,64 @@
 .h3 {
     text-align: center;
     background-color: yellow;
+    font-size: 22px;
 }
+
+.h4 {
+    text-align: center;
+    background-color: rgb(241, 222, 42);
+    -webkit-border-radius: 50px;
+    height: 30px;
+    font-size: 12pt;
+    line-height: 10px;
+    padding: 10px
+    0;
+    box-shadow: 10px 5px 5px black
+}
+
+.chooseAndShowInstructorDiv {
+    margin-top: 30px;
+}
+
+
+.h4:hover {
+    background-color: white
+}
+
+.containerTeachers {
+    height: 75px;
+    background-color: yellow;
+}
+
 .navegationDiv {
     background-color: red
 }
 
 .menuDiv {
     display: flex;
-    background-color: white;
-    justify-content: space-between;
+    background-color: black;
+    color: white;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.clickLectures {
+    margin-top: 20px;
 }
 
 .video {
     display: flex;
     justify-content: center;
     align-items: center; 
-    margin-top: 20px; 
     background-color:black;
-    width: all 
+    width: all;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.teacherAndVideoDiv {
+    background-color: yellow;
+    height: 600px;
 }
 
 .changeLecture {
@@ -40,13 +80,14 @@
 }
 
 .changeLecture:hover {
-    color: yellow
+    font-size: 15px;
+    
 }
 
 
 .link {
     margin-top: 30px;
-    background-color: white
+    font-size: 15px;
 }
 
 .returns {
@@ -57,17 +98,25 @@
     display: flex;
     justify-content: space-around;
     background-color: yellow;
+    margin-top: 30px;
+    
 }
 
 
 .teacherDiv {
     cursor: pointer;    
-    width: 300px;
-    height: 50px;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
 
-
-.teacherDiv:hover {
-    background-color: white;
+.banner {
+    background-color: black;
+    height: 10px;
 }
 
+.headerBanner {
+    background-color: yellow;
+    height: 10px;
+}

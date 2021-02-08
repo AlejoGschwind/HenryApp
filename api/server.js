@@ -19,6 +19,7 @@ const empleoRoutes = require('./src/routes/empleos');
 const talkRoutes = require('./src/routes/talk');
 const booms = require('./src/routes/booms.js');
 const boomTweets = require('./src/routes/boomTweets.js');
+const readme = require ("./src/routes/readme.js");
 
 const server = express();
 
@@ -73,6 +74,7 @@ server.use("/boomTweets", boomTweets);
 server.use("/sendMail", mailRoutes);
 server.use('/empleos', empleoRoutes);
 server.use('/talk', talkRoutes);
+server.use("/readme", readme)
 
 // Error catching endware.
 server.use((err, req, res, next) => {

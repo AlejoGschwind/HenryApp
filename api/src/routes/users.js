@@ -97,7 +97,6 @@ router.patch('/user/:id', async (req, res) => {
   const { email, firstName, lastName, password, isSuperAdmin, role, avatar, currentModule, debt } = req.body;
   let allModules = await Module.find();
   let current = allModules.length;
-
   let update = req.body;
 
 

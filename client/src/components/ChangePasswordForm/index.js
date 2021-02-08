@@ -1,23 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { passwordSchema } from "../../yup";
-import Layout from "../../containers/Layout";
-import UpdateProfileForm from "../UpdateProfile";
 
 import Input from "../Input";
-import {
-  RegisterFormWrapper,
-  RegisterButton,
-  SpanLink,
-  AvatarWrapper,
-  UserLogo,
-} from "./styles";
-import henryLogo from "../../assets/images/henry.png";
 
-import { autoLoginUser } from "../../redux/actions/authActions";
 import { updateUser } from "../../redux/actions/usersActions";
 
 const ChangePasswordForm = () => {
@@ -28,20 +16,11 @@ const ChangePasswordForm = () => {
 
   const dispatch = useDispatch();
 
-  const history = useHistory();
-
-  useEffect(() => {
-    dispatch(autoLoginUser());
-  }, []);
-
   const onSubmit = (data) => {
     if (data.password !== data.repassword) {
       return errors;
-      console.log(errors);
-      console.log(data);
     } else if (data.password === data.repassword) {
       dispatch(updateUser(user._id, data));
-      dispatch(autoLoginUser());
     }
   };
 

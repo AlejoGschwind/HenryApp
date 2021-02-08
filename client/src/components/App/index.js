@@ -15,18 +15,18 @@ function App() {
     dispatch(autoLoginUser());
   }, []);
 
-  // if (loading) {
-  //   const num = Math.round(Math.random() * (quotes.length - 1));
-  //   return (
-  //     <CenterInPage>
-  //       <Loading />
-  //       <QuoteWrapper>
-  //         <Quote>‟{quotes[num].text}”</Quote>
-  //         <Author>{quotes[num].author}</Author>
-  //       </QuoteWrapper>
-  //     </CenterInPage>
-  //   );
-  // };
+  if (loading) {
+    const num = Math.round(Math.random() * (quotes.length - 1));
+    return (
+      <CenterInPage>
+        <Loading />
+        <QuoteWrapper>
+          <Quote>‟{quotes[num].text}”</Quote>
+          <Author>{quotes[num].author}</Author>
+        </QuoteWrapper>
+      </CenterInPage>
+    );
+  };
 
   return (
     <AppWrapper>

@@ -52,38 +52,34 @@ const Header = () => {
                 <img src={user.avatar} alt={user.firstName + " " + user.lastName} />
               }
             </AvatarWrapper>
-
             <MenuWrapper>
               <MenuItem>
                 <Link to="/profile">Perfil</Link>
               </MenuItem>
-              <MenuItem>
-                <Link to="/course">Curso</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/users">Usuarios</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/createUser">Crear usuario</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/modules">Módulos</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/lecturesList">Clases</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/payments">Estado de cuenta</Link>
-              </MenuItem>
+              {user.isSuperAdmin === true || user.role === 'instructor'
+              ?
+                <div> <MenuItem>
+                  <Link to="/users">Usuarios</Link>
+                </MenuItem>
+                  <MenuItem>
+                    <Link to="/modules">Módulos</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to="/lecturesList">Clases</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to="/talks">Henry Talks</Link>
+                  </MenuItem>
+                </div>
+                :
+                <MenuItem>
+                  <Link to="/payments">Estado de cuenta</Link>
+                </MenuItem>
+              }
               <MenuItem>
                 <Link to="/empleos">Bolsa de trabajo</Link>
               </MenuItem>
-              <MenuItem>
-                <Link to="/talks">Henry Talks</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/settings">Configuración</Link>
-              </MenuItem>
+
               <MenuItem onClick={handleLogout}>
                 Salir
               </MenuItem>
