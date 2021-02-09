@@ -49,11 +49,20 @@ const ModuleList = () => {
       [e.target.name]: e.target.value
     });
   }
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     const { title, imagen, description, moduloName, urlLecture } = lecture;
-    axios.post(`http://localhost:5000/lectures/${oneId}`, { title, imagen, description, moduloName, urlLecture })
-      .then(res => console.log(res));
+    console.log(urlLecture)
+    //Si la URL no matchea con el repo de github de soyHenry, simplemente alerta que no es válido
+    if (urlLecture.substring(0,28) !== "https://github.com/soyHenry/" ) {
+      alert ("El enlace ingresado no es válido")
+      e.preventDefault()
+      return  
 
+    } else {
+      console.log("lectura valida, se supone que se mando el link")
+      axios.post(`http://localhost:5000/lectures/${oneId}`, { title, imagen, description, moduloName, urlLecture }) 
+      .then(res => console.log(res));}
+      
   };
 
   const handleModuleSubmit = (id) => {
@@ -135,7 +144,7 @@ const ModuleList = () => {
                         <div>
                           <h3>Crear una clase</h3>
                         </div>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={()=>{handleSubmit}}>
                           <div>
                             <label>Módulo </label>
                             <div>

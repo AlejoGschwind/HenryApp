@@ -2,12 +2,10 @@ import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
 import { Remarkable } from 'remarkable';
 import "./readme.css";
-import Loading from "../Loading";
-
-
-
 
 export default function Readme (props) {
+
+  if (props.url ) {
     const [readme, setReadme] = useState(null)
     const md = new Remarkable();
   
@@ -73,7 +71,13 @@ export default function Readme (props) {
         </div>
 
     )
-    
+          } else {
+            return (
+              <div>
+                Al parecer, no se encontró ningun Readme
+              </div>
+            )
+          }
 
 
 } 
