@@ -58,7 +58,7 @@ const OneLecture = (props) => {
     );
   };
 
-
+ 
   const arrayAllVideos = []
    allVideos.map (el => {
     var urlVideo = el.url
@@ -100,10 +100,10 @@ const OneLecture = (props) => {
       <div className = "menuDiv">
       {lecturesOfThisModule.length === 0 ? null :
       <Fragment>
-      <div className = "clickLectures" className = "changeLecture" onClick = {()=> {history.push(`/lectures/${prevLecture}/module/${thisModule}`); location.reload()} }><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></div>
-      <div className = "returns" className = "changeLecture" onClick = {()=> {history.push(`/modulo/${thisModule}`)}}><h3>LECTURES <i class="fas fa-book-reader"></i></h3></div>
+      <div className = "clickLectures" className = "changeLecture" onClick = {()=> {history.push(`/lecture/${prevLecture}/module/${thisModule}`); location.reload()} }><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></div>
+      <div className = "returns" className = "changeLecture" onClick = {()=> {history.push(`/modules/${thisModule}`)}}><h3>LECTURES <i class="fas fa-book-reader"></i></h3></div>
       {rightArrow === true?
-       <div  className = "clickLectures" className = "changeLecture" onClick = {()=> {history.push(`/lectures/${nextLecture()}/module/${thisModule}`); location.reload()} }><i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i></div>
+       <div  className = "clickLectures" className = "changeLecture" onClick = {()=> {history.push(`/lecture/${nextLecture()}/module/${thisModule}`); location.reload()} }><i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i></div>
        :
        null
     }

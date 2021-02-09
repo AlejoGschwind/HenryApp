@@ -95,3 +95,21 @@ export const updateTalkSchema = yup.object().shape({
   url: yup.string().url()
     .max(200),
 });
+
+export const updateLectureSchema = yup.object().shape({
+  title: yup.string()
+    .max(100),
+  description: yup.string()
+    .max(500),
+  imagen: yup.string().url()
+    .max(200),
+  urlLecture: yup.string().url()
+    .max(200),
+});
+
+export const updateModuleSchema = yup.object().shape({
+  title: yup.string()
+    .max(100),
+  description: yup.string()
+    .max(500),
+});

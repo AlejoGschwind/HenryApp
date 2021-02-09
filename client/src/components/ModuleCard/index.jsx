@@ -17,7 +17,7 @@ const ModuleCard = ({ module, lectures, available }) => {
       <LectureList>
         {firstLectures.map(l => <LectureCard lecture={l} />)}
       </LectureList>
-      <Button to={`/modulo/${module._id}`}>All Lectures ({lectures.length})</Button>
+      <Button to={`/modules/${module._id}`}>All Lectures ({lectures.length})</Button>
     </ModuleCardWrapper>
   );
 };

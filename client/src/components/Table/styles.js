@@ -48,9 +48,11 @@ export const Row = styled.div`
 `;
 
 export const Cell = styled.div`
+  padding: 1rem;
   width: 1fr;
-  min-height: 50px;
-  height: fit-content;
+  min-height: 60px;
+  max-height: 60px;
+  height: 60px;
   /* margin: 0 1rem; */
   color: black;
   overflow: hidden;
@@ -63,7 +65,6 @@ export const Cell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 `;
 
 export const ActionBox = styled.div`

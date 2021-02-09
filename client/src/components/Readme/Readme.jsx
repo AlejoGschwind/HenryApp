@@ -14,16 +14,21 @@ export default function Readme (props) {
     ReadmeUrl = ReadmeUrl.replace("/tree/master", "/contents")
     ReadmeUrl = ReadmeUrl + "/README.md?ref=master"
 
-    console.log(ReadmeUrl)
+  var ReadmeUrl = props.url;
+  ReadmeUrl = ReadmeUrl.replace("https://github.com/", "repos/");
+  ReadmeUrl = ReadmeUrl.replace("/tree/master", "/contents");
+  ReadmeUrl = ReadmeUrl + "/README.md?ref=master";
+
+  console.log(ReadmeUrl);
 
 
-    const getRepoReadme	 = () => {
-      axios.post("http://localhost:5000/readme/", { ReadmeUrl } )
+  const getRepoReadme = () => {
+    axios.post("http://localhost:5000/readme/", { ReadmeUrl })
       .then(
         res => {
           console.log(res);
           if (!res.data.content) {
-            return
+            return;
           }
           setReadme(res.data.content);
         }

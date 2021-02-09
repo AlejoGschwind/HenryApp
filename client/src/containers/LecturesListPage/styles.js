@@ -59,9 +59,4 @@ export const Button = styled.button`
   border: 2px solid black;
   margin: 0 1rem 1rem 0;
   cursor: pointer;
-
-  &:hover {
-    background: black;
-    color: white;
-  }
 `;

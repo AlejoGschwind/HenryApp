@@ -2,11 +2,11 @@ import React from 'react';
 
 import { TableWrapper, TableHeader, TableHead, TableBody, Row, Cell, ActionBox } from './styles';
 
-const Table = ({ columns = [], rows, actions = [] }) => {
+const Table = ({ columns = [], rows, actions = [], style = {} }) => {
   return (
     <TableWrapper>
 
-      <TableHeader>
+      <TableHeader style={style}>
         {
           columns.map((col) => (
             <TableHead key={col.id}>
@@ -21,7 +21,7 @@ const Table = ({ columns = [], rows, actions = [] }) => {
           rows.map(({ _id, ...row }) => {
             const arrValues = Object.values(row);
             return (
-              <Row key={_id} >
+              <Row key={_id} style={style} >
                 {arrValues.map((val, i) => (
                   <Cell key={i}>{String(val)}</Cell>
                 ))}

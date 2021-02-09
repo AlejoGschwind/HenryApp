@@ -7,6 +7,9 @@ export const LecturePageWrapper = styled.div`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit , minmax(320px, 1fr));
-  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 35px 35px;
+  grid-auto-flow: row dense;
+  overflow: hidden;
+  box-sizing: content-box;
 `;

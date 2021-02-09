@@ -8,6 +8,7 @@ export const FilterBarWrapper = styled.div`
 
   display:  flex;
   align-items: center;
+  position: relative;
 `;
 
 export const FilterIconWrapper = styled.div`
@@ -19,4 +20,12 @@ export const FilterIconWrapper = styled.div`
   display:  flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const SearchInputWrapper = styled.div`
+  height: 100%;
+  align-self: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
 `;
